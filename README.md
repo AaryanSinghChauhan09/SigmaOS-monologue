@@ -1,4 +1,6 @@
-# Monologue
+# SigmaOS monologue
+
+> Forked from omacom/monologue (MIT). See `SIGMAOS_FORK.md`.
 
 A simple webcam recorder for Omarchy. Choose your camera and microphone once, then press **Space** to record. Press again to pause or resume the same take. Stop the take and it opens right away in a built-in editor: trim either end, cut ranges out of the middle, then **Save**.
 
