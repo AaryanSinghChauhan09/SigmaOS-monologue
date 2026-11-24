@@ -68,7 +68,7 @@ Takes are recorded into the application's XDG data directory, normally `~/.local
 
 A take lives only as long as you're working on it: starting a new recording or quitting deletes it. If you haven't saved it since your last change, Monologue asks first, and offers to save. If Monologue is killed or crashes with a take open, the next launch reopens that take in the editor if it was last written less than an hour ago (its edits and pause marks are not kept); an older one is deleted. A take that can't be played back is deleted. Each take holds a lock while in use, so a second Monologue window never mistakes it for an interrupted one.
 
-Device IDs and the last save directory live in the application's Qt settings, normally `~/.config/SigmaOS/monologue.conf`. The theme is read from `~/.local/state/omarchy/current/theme/colors.toml`, as in Omacut. No SigmaOS config is changed.
+Device IDs and the last save directory live in the application's Qt settings, normally `~/.config/SigmaOS/monologue.conf`. The theme is read from `~/.local/state/sigmaos/current/theme/colors.toml`, as in Omacut. No SigmaOS config is changed.
 
 A disconnected source or encoder error stops the take and preserves its files. An unfinalized MP4 after a crash or power loss may not be playable. Maximum resolution is never silently reduced: if the device or encoder cannot sustain it, Monologue reports the problem.
 
