@@ -91,3 +91,8 @@ A real-camera check is still needed for each device/backend combination, particu
 ## License
 
 MIT. The portal file picker, theme-watching approach, and filmstrip trimming interface derive from [Omacut](https://github.com/omacom-io/omacut), copyright David Heinemeier Hansson; attribution is retained in [LICENSE](LICENSE).
+## Documentation
+
+Wiki documentation is available in the SigmaOS Wiki Staging repository:
+
+- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging#SigmaOS-monologue) - Full Wiki documentation for all SigmaOS components
