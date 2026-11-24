@@ -1,22 +1,22 @@
 # SigmaOS monologue
 
-> Forked from omacom/monologue (MIT). See `SIGMAOS_FORK.md`.
+> Forked from SigmaOS/monologue (MIT). See `SIGMAOS_FORK.md`.
 
-A simple webcam recorder for Omarchy. Choose your camera and microphone once, then press **Space** to record. Press again to pause or resume the same take. Stop the take and it opens right away in a built-in editor: trim either end, cut ranges out of the middle, then **Save**.
+A simple webcam recorder for SigmaOS. Choose your camera and microphone once, then press **Space** to record. Press again to pause or resume the same take. Stop the take and it opens right away in a built-in editor: trim either end, cut ranges out of the middle, then **Save**.
 
 - Remembers camera and microphone by device ID; missing inputs never silently switch.
 - Automatically selects the camera's maximum advertised video resolution, preferring 30 fps at that resolution. A mode slower than 15 fps is skipped when a smoother one exists, so a still-size listing cannot outrank the video mode. Preview preserves the whole frame.
 - Live microphone meter with peak hold and clipping indication, including while paused. No microphone playback through your speakers.
 - Explicit No audio option for silent recordings.
 - Mirrors the live preview, the way Zoom and FaceTime do, so you move as in a mirror; the recording keeps the camera's true picture, so text reads correctly. The toggle sits at the bottom right (or press M) and is remembered.
-- Live Omarchy accent syncing, including theme symlink switches. Controls and dialogs follow Hyprland's active corner rounding, including personal overrides. The chrome is light or dark with the theme, while the camera picture stays framed in black; a yellow fallback follows Omacut, and button foregrounds adapt for contrast.
-- Follows the language picked under Omarchy's Setup > Language, live, including right-to-left layout. Every visible string goes through `qsTr()` or `tr()`; a translation is a flat JSON catalog from English text to the translation, `src/i18n/<code>.json`, listed in `src/resources.qrc`.
+- Live SigmaOS accent syncing, including theme symlink switches. Controls and dialogs follow Hyprland's active corner rounding, including personal overrides. The chrome is light or dark with the theme, while the camera picture stays framed in black; a yellow fallback follows Omacut, and button foregrounds adapt for contrast.
+- Follows the language picked under SigmaOS's Setup > Language, live, including right-to-left layout. Every visible string goes through `qsTr()` or `tr()`; a translation is a flat JSON catalog from English text to the translation, `src/i18n/<code>.json`, listed in `src/resources.qrc`.
 - Built-in editing: split the take into clips on an Omacut-style filmstrip, trim each clip with its handles, see where you paused, and undo. Edits never touch the original.
 - H.264 MP4 with AAC audio, retained originals, and atomic Save.
 
 ## Build and run
 
-Install a C++17 compiler, `cmake`, `make`, `qt6-base`, `qt6-declarative`, `qt6-multimedia` (Qt 6.8 or newer) with its FFmpeg backend `qt6-multimedia-ffmpeg`, `libpulse`, `libjpeg-turbo`, and `ffmpeg`; omarchy-pkgs' PKGBUILD is the full list. Microphone capture requires a PulseAudio-compatible server, such as PipeWire-Pulse on Omarchy. Then:
+Install a C++17 compiler, `cmake`, `make`, `qt6-base`, `qt6-declarative`, `qt6-multimedia` (Qt 6.8 or newer) with its FFmpeg backend `qt6-multimedia-ffmpeg`, `libpulse`, `libjpeg-turbo`, and `ffmpeg`; omarchy-pkgs' PKGBUILD is the full list. Microphone capture requires a PulseAudio-compatible server, such as PipeWire-Pulse on SigmaOS. Then:
 
 ```sh
 ./bin/build
@@ -25,7 +25,7 @@ Install a C++17 compiler, `cmake`, `make`, `qt6-base`, `qt6-declarative`, `qt6-m
 
 The save dialog requires `xdg-desktop-portal` and your desktop's portal backend. Monologue uses Qt's FFmpeg multimedia backend for timestamped capture; the binary selects it automatically.
 
-Monologue is packaged in [omarchy-pkgs](https://github.com/omacom/omarchy-pkgs/tree/master/pkgbuilds/monologue), whose PKGBUILD is also the list of dependencies CI installs.
+Monologue is packaged in [omarchy-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-pkgs/tree/master/pkgbuilds/monologue), whose PKGBUILD is also the list of dependencies CI installs.
 
 ## Shortcuts
 
@@ -64,11 +64,11 @@ Handles catch on pause marks, neighbouring clips, and the playhead. Playback pla
 
 ## Storage and settings
 
-Takes are recorded into the application's XDG data directory, normally `~/.local/share/omacom/monologue/recordings/`, one folder per take. Saving an unedited clip copies the original without re-encoding; an edited clip is re-encoded from its clips (H.264 CRF 18, AAC) into a hidden temporary file beside the destination, then renamed into place. Saving into Monologue's own recordings folder is refused.
+Takes are recorded into the application's XDG data directory, normally `~/.local/share/SigmaOS/monologue/recordings/`, one folder per take. Saving an unedited clip copies the original without re-encoding; an edited clip is re-encoded from its clips (H.264 CRF 18, AAC) into a hidden temporary file beside the destination, then renamed into place. Saving into Monologue's own recordings folder is refused.
 
 A take lives only as long as you're working on it: starting a new recording or quitting deletes it. If you haven't saved it since your last change, Monologue asks first, and offers to save. If Monologue is killed or crashes with a take open, the next launch reopens that take in the editor if it was last written less than an hour ago (its edits and pause marks are not kept); an older one is deleted. A take that can't be played back is deleted. Each take holds a lock while in use, so a second Monologue window never mistakes it for an interrupted one.
 
-Device IDs and the last save directory live in the application's Qt settings, normally `~/.config/omacom/monologue.conf`. The theme is read from `~/.local/state/omarchy/current/theme/colors.toml`, as in Omacut. No Omarchy config is changed.
+Device IDs and the last save directory live in the application's Qt settings, normally `~/.config/SigmaOS/monologue.conf`. The theme is read from `~/.local/state/omarchy/current/theme/colors.toml`, as in Omacut. No SigmaOS config is changed.
 
 A disconnected source or encoder error stops the take and preserves its files. An unfinalized MP4 after a crash or power loss may not be playable. Maximum resolution is never silently reduced: if the device or encoder cannot sustain it, Monologue reports the problem.
 
@@ -90,7 +90,7 @@ A real-camera check is still needed for each device/backend combination, particu
 
 ## License
 
-MIT. The portal file picker, theme-watching approach, and filmstrip trimming interface derive from [Omacut](https://github.com/omacom-io/omacut), copyright David Heinemeier Hansson; attribution is retained in [LICENSE](LICENSE).
+MIT. The portal file picker, theme-watching approach, and filmstrip trimming interface derive from [Omacut](https://github.com/SigmaOS-io/omacut), copyright David Heinemeier Hansson; attribution is retained in [LICENSE](LICENSE).
 ## Documentation
 
 Wiki documentation is available in the SigmaOS Wiki Staging repository:
