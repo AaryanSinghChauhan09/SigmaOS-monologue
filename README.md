@@ -16,7 +16,7 @@ A simple webcam recorder for SigmaOS. Choose your camera and microphone once, th
 
 ## Build and run
 
-Install a C++17 compiler, `cmake`, `make`, `qt6-base`, `qt6-declarative`, `qt6-multimedia` (Qt 6.8 or newer) with its FFmpeg backend `qt6-multimedia-ffmpeg`, `libpulse`, `libjpeg-turbo`, and `ffmpeg`; omarchy-pkgs' PKGBUILD is the full list. Microphone capture requires a PulseAudio-compatible server, such as PipeWire-Pulse on SigmaOS. Then:
+Install a C++17 compiler, `cmake`, `make`, `qt6-base`, `qt6-declarative`, `qt6-multimedia` (Qt 6.8 or newer) with its FFmpeg backend `qt6-multimedia-ffmpeg`, `libpulse`, `libjpeg-turbo`, and `ffmpeg`; sigmaos-pkgs' PKGBUILD is the full list. Microphone capture requires a PulseAudio-compatible server, such as PipeWire-Pulse on SigmaOS. Then:
 
 ```sh
 ./bin/build
@@ -25,7 +25,7 @@ Install a C++17 compiler, `cmake`, `make`, `qt6-base`, `qt6-declarative`, `qt6-m
 
 The save dialog requires `xdg-desktop-portal` and your desktop's portal backend. Monologue uses Qt's FFmpeg multimedia backend for timestamped capture; the binary selects it automatically.
 
-Monologue is packaged in [omarchy-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-pkgs/tree/master/pkgbuilds/monologue), whose PKGBUILD is also the list of dependencies CI installs.
+Monologue is packaged in [sigmaos-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-pkgs/tree/master/pkgbuilds/monologue), whose PKGBUILD is also the list of dependencies CI installs.
 
 ## Shortcuts
 
